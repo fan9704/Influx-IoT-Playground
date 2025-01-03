@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "iot-playground"
+version = "0.1.0"
+description = ""
+authors = ["fan9704 <cxz123499@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+paho-mqtt = "^2.1.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

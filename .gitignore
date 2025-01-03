@@ -1,0 +1,4 @@
+influx/
+telegraf/
+.venv/
+.env

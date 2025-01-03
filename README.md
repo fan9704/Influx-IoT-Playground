@@ -1,8 +1,12 @@
 # InfluxDB-IoT-Playground
 
+> Data Analyze for IoT Device
+
 > Author : FKT
 
 ---
+
+![preview](images/preview.png)
 
 ## Prerequisite
 

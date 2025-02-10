@@ -1,0 +1,52 @@
+services:
+  influx-db:
+    container_name: influx-db
+    image: influxdb:2.0
+    environment:
+      - DOCKER_INFLUXDB_INIT_MODE=setup
+      - DOCKER_INFLUXDB_INIT_BUCKET=${INFLUX_BUCKET}
+      - DOCKER_INFLUXDB_INIT_USERNAME=${INFLUX_USERNAME}
+      - DOCKER_INFLUXDB_INIT_PASSWORD=${INFLUX_PASSWORD}
+      - DOCKER_INFLUXDB_INIT_ORG=${INFLUX_ORG}
+    ports:
+      - "8086:8086"
+    volumes:
+      - ./influxdb:/var/lib/
+  telegraf:
+    container_name: telegraf
+    image: telegraf
+    user: root
+    volumes:
+      - ./telegraf.conf:/etc/telegraf/telegraf.conf
+    depends_on:
+      - influx-db
+      - emqx
+  grafana:
+    container_name: grafana-influx
+    image: grafana/grafana:11.0.0
+    environment:      
+      - GF_SECURITY_ADMIN_USER=${GRAFANA_ADMIN_USER}
+      - GF_SECURITY_ADMIN_PASSWORD=${GRAFANA_ADMIN_PASSWORD}
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./grafana:/var/lib/grafana
+    depends_on:
+      - influx-db
+  emqx:
+    container_name: emqx
+    image: emqx/emqx
+    ports:
+      - "0.0.0.0:1883:1883"
+      - "18083:18083"
+    depends_on:
+      - influx-db
+  iot-publisher:
+    container_name: iot-publisher
+    image: fan9704/iot-publisher
+    environment:
+      - MQTT_SERVER_IP=emqx
+      - DEVICE_NUMBER=3
+    depends_on:
+      - emqx
+      - telegraf

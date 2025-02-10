@@ -4,10 +4,10 @@ version = "0.1.0"
 description = ""
 authors = ["fan9704 <cxz123499@gmail.com>"]
 readme = "README.md"
-
+package-mode = false
 [tool.poetry.dependencies]
 python = "^3.12"
-paho-mqtt = "^2.1.0"
+paho-mqtt = "<2.0.0"
 
 
 [build-system]

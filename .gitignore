@@ -1,4 +1,8 @@
+# Docker Container Volume
 influx/
 telegraf/
+grafana/
+telegraf.conf
+
 .venv/
 .env

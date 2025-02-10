@@ -1,0 +1,6 @@
+.venv
+grafana
+images
+influxdb
+.gitignore
+telegraf.conf

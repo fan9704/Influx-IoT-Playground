@@ -1,7 +1,6 @@
 # InfluxDB-IoT-Playground
 
 > Data Analyze for IoT Device
-
 > Author : FKT
 
 ---
@@ -11,7 +10,7 @@
 
 ## System Architecture
 
-![](images/system-architecture.svg)
+![Architecture](images/system-architecture.svg)
 
 ---
 
@@ -20,7 +19,6 @@
 - Docker/Docker-Compose
 - Python
 - Poetry
-
 
 ---
 
@@ -51,6 +49,7 @@ docker-compose up -d
 ![Grafana-Influx](images/grafana-influx.png)
 
 填入
+
 1. user
 2. password
 3. bucket
@@ -69,7 +68,7 @@ poetry shell
 python3 main.py
 ```
 
-### Step.6 Grafana Query 
+### Step.6 Grafana Query
 
 填寫至 Dashboard 下方的 Query
 
@@ -77,7 +76,17 @@ python3 main.py
 from(bucket: "gdsc")
   |> range(start: -1m)  
 ```
+
 ![Grafana-Query](images/grafana-query.png)
+
+---
+
+## Optional Open EMQX Dashboard
+
+[Dashboard Location](http://localhost:18083/)
+
+default account/password
+admin/public
 
 ---
 

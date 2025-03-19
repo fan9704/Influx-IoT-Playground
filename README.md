@@ -19,7 +19,8 @@
 - Docker/Docker-Compose
 - Python
 - Poetry
-
+- (Optional)ESP8266/D1 or other support TCP IoT device
+ 
 ---
 
 ## Getting Start
@@ -90,7 +91,7 @@ from(bucket: "gdsc")
 [Dashboard Location](http://localhost:18083/)
 
 > default account/password
-
+>
 > admin/public
 
 ![EMQX Dashboard](images/emqx-dashboard-client.png)

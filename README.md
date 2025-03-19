@@ -42,6 +42,10 @@ docker-compose up -d
 
 開啟 Grafana 介面 > Connections > Add new connection > InfluxDB
 
+> Grafana default username/password
+>
+> admin/admin
+
 ![Grafana-Datasource](images/grafana-datasource.png)
 
 記得選擇 InfluxDB 2.0 以上的 **Flux** Source
@@ -85,8 +89,14 @@ from(bucket: "gdsc")
 
 [Dashboard Location](http://localhost:18083/)
 
-default account/password
-admin/public
+> default account/password
+
+> admin/public
+
+![EMQX Dashboard](images/emqx-dashboard-client.png)
+
+- [ ] Check ESP8266 is connected
+- [ ] Check Telegraf is connected
 
 ---
 

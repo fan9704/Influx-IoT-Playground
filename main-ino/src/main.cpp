@@ -3,9 +3,9 @@
 #include <ESP8266WiFi.h>
 
 // 設定 WiFi 連線資訊
-const char* ssid = "Redmi Note 13 Pro";
-const char* password = "88888888";
-const char* mqtt_server = "192.168.112.60";
+const char* ssid = "YOUR WIFI SSID";
+const char* password = "YOUR WIFI PASSWORD";
+const char* mqtt_server = "YOUR LAPTOP IP";
 const int mqtt_port = 1883;
 
 WiFiClient espClient;
